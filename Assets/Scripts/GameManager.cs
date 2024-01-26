@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameManager instance;
+    public static GameManager instance;
 
     public float risa = 100;
     public float audiencia = 100;
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         roundCounter++;
         int randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
         Question question = possibleQuestions[randomIndex];
-        Debug.Log(question.enunciado);
+        UIManager.instance.PrepareCardsUI(question);
     }
 
 }
