@@ -7,7 +7,7 @@ public class AngryPerson : ScriptableObject
 {
 
     public Sprite image;
-    public string name = "John Doe";
+    public string personName = "John Doe";
     public int strength = 1;
     public string field;
 

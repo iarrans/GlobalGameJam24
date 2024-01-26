@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MolestoCortarollos
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: a7734e1a016b9d041add74c5a654aef5, type: 3}
-  name: Biggie Cheese
+  personName: Biggie Cheese
   strength: 1
   field: Risa
