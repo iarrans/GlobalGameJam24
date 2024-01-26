@@ -439,9 +439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315f8714c1f0caf46810c33c67b5b312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  risa: 100
-  audiencia: 100
-  familyFriendly: 100
+  risa: 5
+  audiencia: 5
+  familyFriendly: 5
   roundCounter: 0
   possibleQuestions:
   - {fileID: 11400000, guid: 83222786030157249babd7197aaf83bd, type: 2}

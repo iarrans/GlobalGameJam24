@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float familyFriendly = 100;
 
     public float roundCounter = 0;
+    public bool alive = true;
 
     public List<Question> possibleQuestions;
 
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void ApplyCardResults(Card carta)
     {
+        UIManager.instance.questionsCanvas.SetActive(false);
         ChangeRisa(carta.risaEffect);
         ChangeAudiencia(carta.audienciaEffect);
         ChangeFamilyFriendly(carta.familyFriendlyEffect);
@@ -39,7 +41,7 @@ public class GameManager : MonoBehaviour
         risa += quantity;
         if (risa <= 0)
         {
-            StartCoroutine(EndGame(0));
+            alive = false;
             return;
         }       
     }
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
         audiencia += quantity;
         if (audiencia <= 0)
         {
-            StartCoroutine(EndGame(1));
+            alive = false;
             return;
         }
     }
@@ -59,23 +61,30 @@ public class GameManager : MonoBehaviour
         familyFriendly += quantity;
         if (familyFriendly <= 0)
         {
-            StartCoroutine(EndGame(2));
+            alive = false;
             return;
         }
     }
 
-     private IEnumerator EndGame(int motivo)
+     private IEnumerator EndGame()
      {
-        Debug.Log("¡Se acabó la partida! " + motivo);
+        Debug.Log("¡Se acabó la partida! ");
+        UIManager.instance.questionsCanvas.SetActive(false);
         yield return null;
      }
 
     public void ShowNextQuestion()
     {
-        roundCounter++;
-        int randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
-        Question question = possibleQuestions[randomIndex];
-        UIManager.instance.PrepareCardsUI(question);
+        if (alive) {
+            int randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
+            Question question = possibleQuestions[randomIndex];
+            UIManager.instance.questionsCanvas.SetActive(true);
+            UIManager.instance.PrepareCardsUI(question);
+        }
+        else
+        {
+            StartCoroutine(EndGame());
+        }
     }
 
 }
