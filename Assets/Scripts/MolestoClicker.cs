@@ -6,7 +6,12 @@ public class MolestoClicker : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        this.gameObject.SetActive(false);
+        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+    }
 
+    private void OnTriggerEnter(Collider col)
+    {
+        //Debug.Log("Col");
+        AngryPeopleManager.instance.dir *= -1;
     }
 }
