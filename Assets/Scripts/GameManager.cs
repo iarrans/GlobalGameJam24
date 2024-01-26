@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         ChangeRisa(carta.risaEffect);
         ChangeAudiencia(carta.audienciaEffect);
         ChangeFamilyFriendly(carta.familyFriendlyEffect);
+        ShowNextQuestion();
     }
 
     public void ChangeRisa(float quantity)
@@ -40,8 +41,7 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(EndGame(0));
             return;
-        }
-        ShowNextQuestion();
+        }       
     }
 
     public void ChangeAudiencia(float quantity)
@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
             StartCoroutine(EndGame(1));
             return;
         }
-        ShowNextQuestion();
     }
 
     public void ChangeFamilyFriendly(float quantity)
@@ -63,7 +62,6 @@ public class GameManager : MonoBehaviour
             StartCoroutine(EndGame(2));
             return;
         }
-        ShowNextQuestion();
     }
 
      private IEnumerator EndGame(int motivo)
