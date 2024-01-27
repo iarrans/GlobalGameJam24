@@ -575,11 +575,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315f8714c1f0caf46810c33c67b5b312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSliderValue: 0
   risa: 100
   audiencia: 100
   familyFriendly: 100
   roundCounter: 0
   alive: 1
+  currentCompanion: {fileID: 0}
   possibleQuestions:
   - {fileID: 11400000, guid: 83222786030157249babd7197aaf83bd, type: 2}
   - {fileID: 11400000, guid: 09f368efb6589434cb8fe5bd25585036, type: 2}
@@ -1421,6 +1423,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCard: {fileID: 0}
+  statement: {fileID: 0}
+  risaStat: {fileID: 0}
+  audienciaStat: {fileID: 0}
+  familyFriendlyStat: {fileID: 0}
 --- !u!1 &2108648990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1549,13 @@ MonoBehaviour:
   QuestionText: {fileID: 2143208539}
   option1Text: {fileID: 8278028}
   option2Text: {fileID: 1754186230}
+  upperVariation: {fileID: 0}
+  lowerVariation: {fileID: 0}
+  noneVariation: {fileID: 0}
+  randomRangeVariation: {fileID: 0}
+  risaSlider: {fileID: 0}
+  audienciaSlider: {fileID: 0}
+  familyFriendlySlider: {fileID: 0}
 --- !u!1 &2138084535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,6 +1704,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCard: {fileID: 0}
+  statement: {fileID: 0}
+  risaStat: {fileID: 0}
+  audienciaStat: {fileID: 0}
+  familyFriendlyStat: {fileID: 0}
 --- !u!1 &2143208537
 GameObject:
   m_ObjectHideFlags: 0
