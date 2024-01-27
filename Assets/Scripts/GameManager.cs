@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> possibleCharacters;
 
+    public List<GameObject> spectators;
+
 
     private void Awake()
     {
@@ -78,7 +80,7 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(AnimateCharacter(carta));
                 break;
             case CardType.animacionPublico:
-                Debug.Log("el público parece animado");
+                StartCoroutine(AnimateSpectators(carta.publicoAnimation));
                 break;
             case CardType.Molesto:
                 MolestoManager.instance.SpawnMolesto();
@@ -238,6 +240,19 @@ public class GameManager : MonoBehaviour
 
         if (currentCompanion != null) currentCompanion.GetComponent<Animator>().Play("IddleNeutral");
         mickey.GetComponent<Animator>().Play("IddleNeutral");
+    }
+
+    public IEnumerator AnimateSpectators(string publicoAnimation)
+    {
+        foreach (GameObject spectator in spectators)
+        {
+            spectator.GetComponent<Animator>().Play(publicoAnimation);
+        }
+        yield return new WaitForSeconds(2);
+        foreach (GameObject spectator in spectators)
+        {
+            spectator.GetComponent<Animator>().Play("Idle");
+        }
     }
 
 }
