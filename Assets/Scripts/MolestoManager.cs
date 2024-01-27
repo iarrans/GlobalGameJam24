@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.GraphicsBuffer;
 
 public class MolestoManager : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class MolestoManager : MonoBehaviour
     public float molestoTime = 0;
     private float personTime = 0;
     private int chosen;
-    public int dir = 1;
 
     [SerializeField]
     private int difficulty = 1;
@@ -23,12 +23,35 @@ public class MolestoManager : MonoBehaviour
     [SerializeField]
     private float speed = 1;
 
+    [SerializeField]
+    private float damage = 1;
+
 
     [SerializeField]
     private GameObject molesto;
 
     [SerializeField]
+    private GameObject spawnerTerr;
+    [SerializeField]
+    private GameObject spawnerFly;
+    [SerializeField]
+    private List<GameObject> exitPoints;
+    public int exit;
+
+
+    [SerializeField]
     private List<Molesto> peopleList;
+
+    [SerializeField]
+    private List<GameObject> posMarkers;
+
+    [SerializeField]
+    private List<GameObject> flyMarkers;
+    private Vector3 markerpos;
+
+    public int currentMarker = 0;
+
+    public bool MolestoHit = false;
 
     void Awake()
     {
@@ -38,24 +61,27 @@ public class MolestoManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        molesto.GetComponent<SpriteRenderer>().enabled = false;
+        molesto.SetActive(false);
         waitTime = Random.Range(3, 10);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 molestoPos = molesto.GetComponent<Transform>().position;
-        speed = Mathf.Min(Mathf.Max(GameManager.instance.roundCounter, 1)  * difficulty/3.0f, 10);
-        Vector3 newPos = new Vector3(molestoPos.x + Time.deltaTime * dir * speed, molestoPos.y, molestoPos.z);
-        molesto.GetComponent<Transform>().position = newPos;
-
+        if (MolestoHit)
+        {
+            MolestoLeave();
+        }
+        else {
+            MoveMolesto();
+        }
+        
 
         personTime += Time.deltaTime;
 
 
         if (personTime >= waitTime/difficulty) {
-            if (molesto.GetComponent<SpriteRenderer>().enabled == false)
+            if (!molesto.activeSelf)
             {
                 SpawnMolesto();
             }
@@ -63,7 +89,7 @@ public class MolestoManager : MonoBehaviour
             waitTime = Random.Range(3, 10);
         }
 
-        if(molesto.GetComponent<SpriteRenderer>().enabled == true) { molestoTime += Time.deltaTime; }
+        if(molesto.activeSelf && !MolestoHit) { molestoTime += Time.deltaTime; }
 
         if (molestoTime >= 1) { ReduceMolesto(); molestoTime = 0; }
 
@@ -74,22 +100,63 @@ public class MolestoManager : MonoBehaviour
         chosen = Random.Range(0, peopleList.Count);
         print(peopleList[chosen].personName);
         molesto.gameObject.GetComponent<SpriteRenderer>().sprite = peopleList[chosen].image;
-        molesto.GetComponent<SpriteRenderer>().enabled = true;
+        molesto.SetActive(true);
         molestoTime = 0;
+        
+        if (chosen == 0)
+        {
+            currentMarker = 3;
+            molesto.transform.position = spawnerFly.transform.position;
+        }
+        else
+        {
+            currentMarker = 0;
+            molesto.transform.position = spawnerTerr.transform.position;
+        }
+        
+    }
+
+    void MoveMolesto()
+    {
+        speed = Mathf.Min(Mathf.Max(GameManager.instance.roundCounter, 1) * difficulty / 3.0f, 10);
+        if(chosen == 0)
+        {
+            markerpos = flyMarkers[currentMarker].GetComponent<Transform>().position;
+        }
+        else
+        {
+            markerpos = posMarkers[currentMarker].GetComponent<Transform>().position;
+        }
+        
+        molesto.transform.position = Vector3.MoveTowards(molesto.transform.position, markerpos, Time.deltaTime * speed);
+    }
+
+    void MolestoLeave()
+    {
+        speed = 5;
+        GameObject exitP = exitPoints[exit];
+
+        molesto.transform.position = Vector3.MoveTowards(molesto.transform.position, exitP.transform.position, Time.deltaTime * speed);
+        if (molesto.transform.position == exitP.transform.position)
+        {
+            molesto.SetActive(false);
+            MolestoHit = false;
+        }
     }
 
     void ReduceMolesto()
     {
+        damage = Mathf.Min(Mathf.Max(GameManager.instance.roundCounter, 1) * difficulty / 5.0f, 10);
         switch (peopleList[chosen].field)
         {
             case "Risa":
-                GameManager.instance.ChangeRisa(peopleList[chosen].strength * difficulty, RangeEffect.Down);
+                GameManager.instance.ChangeRisa(peopleList[chosen].strength * damage, RangeEffect.Down);
                 break;
             case "Audiencia":
-                GameManager.instance.ChangeAudiencia(peopleList[chosen].strength * difficulty, RangeEffect.Down);
+                GameManager.instance.ChangeAudiencia(peopleList[chosen].strength * damage, RangeEffect.Down);
                 break;
             case "Family Friendly":
-                GameManager.instance.ChangeFamilyFriendly(peopleList[chosen].strength * difficulty, RangeEffect.Down);
+                GameManager.instance.ChangeFamilyFriendly(peopleList[chosen].strength * damage, RangeEffect.Down);
                 break;
             default:
                 break;

@@ -6,12 +6,22 @@ public class MolestoClicker : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        //this.gameObject.SetActive(false);
+        if(this.gameObject.transform.position.x > -2)
+        {
+            MolestoManager.instance.exit = 0;
+        }
+        else
+        {
+            MolestoManager.instance.exit = 1;
+        }
+        
+        MolestoManager.instance.MolestoHit = true;
+
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        //Debug.Log("Col");
-        MolestoManager.instance.dir *= -1;
+        MolestoManager.instance.currentMarker = (MolestoManager.instance.currentMarker + 1) % 4;
     }
 }
