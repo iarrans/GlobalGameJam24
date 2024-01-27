@@ -4,13 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class AngryPeopleManager : MonoBehaviour
+public class MolestoManager : MonoBehaviour
 {
 
-    public static AngryPeopleManager instance;
+    public static MolestoManager instance;
 
     [SerializeField]
-    private float waitTime = 5;
+    private float waitTime;
 
     public float molestoTime = 0;
     private float personTime = 0;
@@ -28,7 +28,7 @@ public class AngryPeopleManager : MonoBehaviour
     private GameObject molesto;
 
     [SerializeField]
-    private List<AngryPerson> peopleList;
+    private List<Molesto> peopleList;
 
     void Awake()
     {
@@ -39,13 +39,14 @@ public class AngryPeopleManager : MonoBehaviour
     void Start()
     {
         molesto.GetComponent<SpriteRenderer>().enabled = false;
+        waitTime = Random.Range(3, 10);
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 molestoPos = molesto.GetComponent<Transform>().position;
-        speed = Mathf.Min(Mathf.Max(GameManager.instance.roundCounter, 1), 20) * difficulty/2.0f;
+        speed = Mathf.Min(Mathf.Max(GameManager.instance.roundCounter, 1)  * difficulty/3.0f, 10);
         Vector3 newPos = new Vector3(molestoPos.x + Time.deltaTime * dir * speed, molestoPos.y, molestoPos.z);
         molesto.GetComponent<Transform>().position = newPos;
 
@@ -79,17 +80,19 @@ public class AngryPeopleManager : MonoBehaviour
 
     void ReduceMolesto()
     {
-        if (peopleList[chosen].field == "Risa")
+        switch (peopleList[chosen].field)
         {
-            GameManager.instance.ChangeRisa(peopleList[chosen].strength * difficulty, RangeEffect.Down);
-        }
-        if (peopleList[chosen].field == "Audiencia")
-        {
-            GameManager.instance.ChangeAudiencia(peopleList[chosen].strength * difficulty, RangeEffect.Down);
-        }
-        if (peopleList[chosen].field == "Family Friendly")
-        {
-            GameManager.instance.ChangeFamilyFriendly(peopleList[chosen].strength * difficulty, RangeEffect.Down);
+            case "Risa":
+                GameManager.instance.ChangeRisa(peopleList[chosen].strength * difficulty, RangeEffect.Down);
+                break;
+            case "Audiencia":
+                GameManager.instance.ChangeAudiencia(peopleList[chosen].strength * difficulty, RangeEffect.Down);
+                break;
+            case "Family Friendly":
+                GameManager.instance.ChangeFamilyFriendly(peopleList[chosen].strength * difficulty, RangeEffect.Down);
+                break;
+            default:
+                break;
         }
 
         if (!GameManager.instance.alive)

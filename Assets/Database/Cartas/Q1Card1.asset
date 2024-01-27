@@ -17,4 +17,10 @@ MonoBehaviour:
   risaEffect: 1
   audienciaEffect: 2
   familyFriendlyEffect: 3
+  cardType: 8
   baseAmountChange: 1
+  mickeyAnimation: {fileID: 0}
+  invitadoAnimation: {fileID: 0}
+  publicoAnimation: {fileID: 0}
+  imagenEnPantalla: {fileID: 0}
+  efectoSonido: {fileID: 8300000, guid: b0377d69f27c50345944a8a34dd4a75e, type: 3}

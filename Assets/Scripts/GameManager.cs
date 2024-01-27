@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject currentCompanion = null; 
 
     public List<Question> possibleQuestions;
+    public AudioSource audioSource = null;
 
     private void Awake()
     {
@@ -39,6 +40,55 @@ public class GameManager : MonoBehaviour
         ChangeRisa(carta.baseAmountChange, carta.risaEffect);
         ChangeAudiencia(carta.baseAmountChange, carta.audienciaEffect);
         ChangeFamilyFriendly(carta.baseAmountChange, carta.familyFriendlyEffect);
+        switch (carta.cardType) {
+            case CardType.invitadoSale:
+                if (currentCompanion != null)
+                {
+                    Debug.Log("Sale el invitado");
+                }
+                else
+                {
+                    Debug.Log("No hay ningún invitado");
+                }
+                break;
+
+            case CardType.invitadoEntra:
+                if (currentCompanion == null)
+                {
+                    Debug.Log("Entra el invitado");
+                }
+                else
+                {
+                    Debug.Log("Ya hay un invitado");
+                }
+                break;
+            case CardType.animacionPJ:
+                Debug.Log("Miki Motos está animado");
+                break;
+            case CardType.animacionPublico:
+                Debug.Log("el público parece animado");
+                break;
+            case CardType.Molesto:
+                MolestoManager.instance.SpawnMolesto();
+                Debug.Log("El público parece molesto");
+                break;
+            case CardType.animacionCam:
+                Debug.Log("La cámara se ha agitado");
+                break;
+            case CardType.PantallaFondo:
+                Debug.Log("La pantalla de fondo ha cambiado");
+                break;
+            case CardType.CambioLuz:
+                Debug.Log("La luz ha cambiado");
+                break;
+            case CardType.EfectoSonido:
+                audioSource.clip = carta.efectoSonido;
+                audioSource.Play();
+                Debug.Log("*Sonido de martillo de goma*");
+                break;
+            default:
+                break;
+        }
         ShowNextQuestion();
     }
 
@@ -110,6 +160,7 @@ public class GameManager : MonoBehaviour
             Question question = possibleQuestions[randomIndex];
             UIManager.instance.questionsCanvas.SetActive(true);
             UIManager.instance.PrepareCardsUI(question);
+            roundCounter++;
         }
         else
         {

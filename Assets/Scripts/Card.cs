@@ -14,6 +14,8 @@ public class Card : ScriptableObject
 
     public RangeEffect familyFriendlyEffect;
 
+    public CardType cardType;
+
     public float baseAmountChange;
 
     public Animation mickeyAnimation;

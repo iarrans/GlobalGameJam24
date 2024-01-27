@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad67e57b4cf314f9cfc81d564abbf4, type: 3}
   m_Name: Q1Card2
   m_EditorClassIdentifier: 
-  descripcion: Hacer un comentario sobre lo fea que es la ropa del invitado
+  descripcion: Hacer un comentario sobre lo fea que es la cara del invitado
   risaEffect: 2
   audienciaEffect: 3
   familyFriendlyEffect: 1
+  cardType: 4
   baseAmountChange: 2
+  mickeyAnimation: {fileID: 0}
+  invitadoAnimation: {fileID: 0}
+  publicoAnimation: {fileID: 0}
+  imagenEnPantalla: {fileID: 0}
+  efectoSonido: {fileID: 0}
