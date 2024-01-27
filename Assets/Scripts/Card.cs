@@ -16,10 +16,24 @@ public class Card : ScriptableObject
 
     public float baseAmountChange;
 
+    public Animation mickeyAnimation;
+    public Animation invitadoAnimation;
+
+    public Animation publicoAnimation;
+
+    public Sprite imagenEnPantalla;
+
+    public AudioClip efectoSonido;
+
 }
 
 public enum RangeEffect
 {
     None, Up, Down, RandomUpDown
+}
+
+public enum CardType
+{
+    invitadoSale, invitadoEntra, animacionPJ, animacionPublico, Molesto, animacionCam, PantallaFondo, CambioLuz, EfectoSonido
 }
 
