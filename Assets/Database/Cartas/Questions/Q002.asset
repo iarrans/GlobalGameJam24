@@ -15,3 +15,4 @@ MonoBehaviour:
   enunciado: Este invitado parece dispuesto a colaborar contigo en cualquier cosa
   Option1: {fileID: 11400000, guid: 090c06c069dde144581b53c11be25100, type: 2}
   Option2: {fileID: 11400000, guid: 7a4dd5b041e968e458b3a49503f17ada, type: 2}
+  invitado: 1

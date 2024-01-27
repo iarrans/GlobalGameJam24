@@ -10,4 +10,6 @@ public class Question : ScriptableObject
     public Card Option1;
 
     public Card Option2;
+
+    public bool invitado = false;
 }
