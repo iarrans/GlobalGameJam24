@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        UIManager.instance.risaSlider.maxValue = maxSliderValue;
+        UIManager.instance.audienciaSlider.maxValue = maxSliderValue;
+        UIManager.instance.familyFriendlySlider.maxValue = maxSliderValue;
         ShowNextQuestion();
     }
 
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         quantity = CalculateQuantityRange(quantity, effect);
         risa += quantity;
+        UIManager.instance.risaSlider.value = risa;
         if (risa <= 0)
         {
             alive = false;
@@ -54,6 +58,7 @@ public class GameManager : MonoBehaviour
     {
         quantity = CalculateQuantityRange(quantity, effect);
         audiencia += quantity;
+        UIManager.instance.audienciaSlider.value = audiencia;
         if (audiencia <= 0)
         {
             alive = false;
@@ -65,6 +70,7 @@ public class GameManager : MonoBehaviour
     {
         quantity = CalculateQuantityRange(quantity, effect);
         familyFriendly += quantity;
+        UIManager.instance.familyFriendlySlider.value = familyFriendly;
         if (familyFriendly <= 0)
         {
             alive = false;

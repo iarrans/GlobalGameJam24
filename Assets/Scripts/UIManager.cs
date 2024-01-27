@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class UIManager : MonoBehaviour
     public Sprite lowerVariation;
     public Sprite noneVariation;
     public Sprite randomRangeVariation;
+
+    public Slider risaSlider;
+    public Slider audienciaSlider;
+    public Slider familyFriendlySlider;
 
     private void Awake()
     {
