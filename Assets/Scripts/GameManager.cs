@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class GameManager : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case CardType.animacionPJ:
-                Debug.Log("Miki Motos está animado");
+                StartCoroutine(AnimateCharacter(carta));
                 break;
             case CardType.animacionPublico:
                 Debug.Log("el público parece animado");
@@ -222,19 +223,21 @@ public class GameManager : MonoBehaviour
         character.transform.eulerAngles = new Vector3(0,0,0);
     }
 
-    /*
-        public IEnumerator MoveOverSeconds(GameObject objectToMove, Vector3 end, float seconds)
+    public IEnumerator AnimateCharacter(Card carta)
+    {
+        if (carta.mickeyAnimation != null && carta.mickeyAnimation != "")
         {
-            float elapsedTime = 0;
-            Vector3 startingPos = objectToMove.transform.position;
-            while (elapsedTime < seconds)
-            {
-                objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
-                elapsedTime += Time.deltaTime;
-                yield return new WaitForEndOfFrame();
-            }
-            objectToMove.transform.position = end;
+            mickey.GetComponent<Animator>().Play(carta.mickeyAnimation);
         }
-    */
+        if (currentCompanion != null && carta.invitadoAnimation != null && carta.invitadoAnimation != "")
+        {
+            currentCompanion.GetComponent<Animator>().Play(carta.invitadoAnimation);
+        }
+
+        yield return new WaitForSeconds(3);
+
+        if (currentCompanion != null) currentCompanion.GetComponent<Animator>().Play("IddleNeutral");
+        mickey.GetComponent<Animator>().Play("IddleNeutral");
+    }
 
 }

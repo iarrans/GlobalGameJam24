@@ -989,6 +989,7 @@ MonoBehaviour:
   currentCompanion: {fileID: 0}
   possibleQuestions:
   - {fileID: 11400000, guid: f53b465204fcdb44ebd38dd19f63f336, type: 2}
+  - {fileID: 11400000, guid: 02448621d7d8aaf48ae85db62d53527c, type: 2}
   audioSource: {fileID: 980515673}
   screen: {fileID: 2013162572}
   invitadoSpawnPosition: {fileID: 382324929}
@@ -3396,6 +3397,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1986544012881753959, guid: 80b678fb84e55ea4d92e85cca84bb294,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d511cf9d927e1240bf1f242f7a1e4c6, type: 2}
     - target: {fileID: 7260001880140502602, guid: 80b678fb84e55ea4d92e85cca84bb294,
         type: 3}
       propertyPath: m_RootOrder
