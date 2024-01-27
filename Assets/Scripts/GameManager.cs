@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     Debug.Log("No hay ningún invitado");
+                    ShowNextQuestion();
                 }
                 break;
 
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Ya hay un invitado");
+                    ShowNextQuestion();
                 }
                 break;
             case CardType.animacionPJ:
@@ -214,7 +216,8 @@ public class GameManager : MonoBehaviour
         int ranIndex= UnityEngine.Random.Range(0, possibleCharacters.Count);
 
         GameObject character = GameObject.Instantiate(possibleCharacters[ranIndex], invitadoSpawnPosition);
-        character.transform.eulerAngles = new Vector3(0, 128, 0);
+        character.transform.eulerAngles = new Vector3(0, 90, 0);//128
+        character.transform.position = invitadoSpawnPosition.position;
         currentCompanion = character;
         character.GetComponent<Animator>().Play("Walking");
 
@@ -279,14 +282,14 @@ public class GameManager : MonoBehaviour
         float originalIntensity = mainLight.intensity;    
         while (mainLight.intensity > 0)
         {
-            mainLight.intensity -= 0.2f;
+            mainLight.intensity -= 5f;
             yield return new WaitForSeconds(0.05f);
         }
         mainLight.intensity = 0;
         yield return new WaitForSeconds(2f);
-        while (mainLight.intensity < 1)
+        while (mainLight.intensity < 40)
         {
-            mainLight.intensity += 0.05f;
+            mainLight.intensity += 5f;
             yield return new WaitForSeconds(0.1f);
         }
         mainLight.intensity = originalIntensity;
