@@ -16,11 +16,20 @@ public class GameManager : MonoBehaviour
     public int roundCounter = 0;
     public bool alive = true;
 
+    public GameObject mickey;
     public GameObject currentCompanion = null; 
 
     public List<Question> possibleQuestions;
     public AudioSource audioSource = null;
     public GameObject screen = null;
+
+    public Transform invitadoSpawnPosition;
+    public Transform invitadoPosition;
+    public Transform MickeyPosition;
+    public float CompanionSpeed;
+
+    public List<GameObject> possibleCharacters;
+
 
     private void Awake()
     {
@@ -46,7 +55,7 @@ public class GameManager : MonoBehaviour
             case CardType.invitadoSale:
                 if (currentCompanion != null)
                 {
-                    Debug.Log("Sale el invitado");
+                    StartCoroutine(ExitCharacter(currentCompanion));
                 }
                 else
                 {
@@ -57,7 +66,7 @@ public class GameManager : MonoBehaviour
             case CardType.invitadoEntra:
                 if (currentCompanion == null)
                 {
-                    Debug.Log("Entra el invitado");
+                    StartCoroutine(EnterCharacter());
                 }
                 else
                 {
@@ -171,5 +180,61 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+     public IEnumerator ExitCharacter(GameObject character)
+     {
+        character.GetComponent<Animator>().Play("Walking");
+        character.transform.eulerAngles = new Vector3(0, -90, 0);
+
+        float speed = CompanionSpeed;
+        Vector3 end = invitadoSpawnPosition.position;
+        // speed should be 1 unit per second
+        while (character.transform.position != end)
+        {
+           character.transform.position = Vector3.MoveTowards(character.transform.position, end, speed * Time.deltaTime);
+           yield return new WaitForEndOfFrame();
+        }
+        currentCompanion = null;
+        character.SetActive(false);
+     }
+
+    public IEnumerator EnterCharacter()
+    {
+        float speed = CompanionSpeed;
+
+        int ranIndex= UnityEngine.Random.Range(0, possibleCharacters.Count);
+
+        GameObject character = GameObject.Instantiate(possibleCharacters[ranIndex], invitadoSpawnPosition);
+        character.transform.eulerAngles = new Vector3(0, 128, 0);
+        currentCompanion = character;
+        character.GetComponent<Animator>().Play("Walking");
+
+        Vector3 end = invitadoPosition.position;
+        // speed should be 1 unit per second
+        while (character.transform.position != end)
+        {
+            character.transform.position = Vector3.MoveTowards(character.transform.position, end, speed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+        character.transform.LookAt(invitadoSpawnPosition);
+        character.GetComponent<Animator>().Play("IddleNeutral");
+        character.transform.eulerAngles = new Vector3(0,0,0);
+    }
+
+    /*
+        public IEnumerator MoveOverSeconds(GameObject objectToMove, Vector3 end, float seconds)
+        {
+            float elapsedTime = 0;
+            Vector3 startingPos = objectToMove.transform.position;
+            while (elapsedTime < seconds)
+            {
+                objectToMove.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
+                elapsedTime += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+            objectToMove.transform.position = end;
+        }
+    */
 
 }
