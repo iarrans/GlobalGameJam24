@@ -7,11 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public float maxSliderValue;
     public float risa = 100;
     public float audiencia = 100;
     public float familyFriendly = 100;
 
-    public float roundCounter = 0;
+    public int roundCounter = 0;
     public bool alive = true;
 
     public GameObject currentCompanion = null; 

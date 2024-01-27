@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315f8714c1f0caf46810c33c67b5b312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSliderValue: 100
   risa: 5
   audiencia: 5
   familyFriendly: 5
