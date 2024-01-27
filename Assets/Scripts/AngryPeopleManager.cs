@@ -15,9 +15,13 @@ public class AngryPeopleManager : MonoBehaviour
     public float molestoTime = 0;
     private float personTime = 0;
     private int chosen;
+    public int dir = 1;
 
     [SerializeField]
     private int difficulty = 1;
+
+    [SerializeField]
+    private int speed = 3;
 
 
     [SerializeField]
@@ -34,28 +38,33 @@ public class AngryPeopleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        molesto.SetActive(false);
+        molesto.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 molestoPos = molesto.GetComponent<Transform>().position;
+        Vector3 newPos = new Vector3(molestoPos.x + Time.deltaTime * difficulty * dir * speed, molestoPos.y, molestoPos.z);
+        molesto.GetComponent<Transform>().position = newPos;
+
+
         personTime += Time.deltaTime;
 
 
         if (personTime >= waitTime/difficulty) {
-            if (molesto.activeSelf == false)
+            if (molesto.GetComponent<SpriteRenderer>().enabled == false)
             {
                 chosen = Random.Range(0, peopleList.Count);
                 print(peopleList[chosen].personName);
                 molesto.gameObject.GetComponent<SpriteRenderer>().sprite = peopleList[chosen].image;
-                molesto.SetActive(true);
+                molesto.GetComponent<SpriteRenderer>().enabled = true;
                 molestoTime = 0;
             }
             personTime = 0;
         }
 
-        if(molesto.activeSelf == true) { molestoTime += Time.deltaTime; }
+        if(molesto.GetComponent<SpriteRenderer>().enabled == true) { molestoTime += Time.deltaTime; }
 
         if (molestoTime >= 1) { ReduceMolesto(); molestoTime = 0; }
 
