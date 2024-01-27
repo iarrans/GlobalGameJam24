@@ -551,6 +551,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonCard: {fileID: 0}
+  statement: {fileID: 0}
+  risaStat: {fileID: 754784704454411760}
+  audienciaStat: {fileID: 5503363260252007627}
+  familyFriendlyStat: {fileID: 8630454814715864917}
 --- !u!1 &7898599822830256126
 GameObject:
   m_ObjectHideFlags: 0

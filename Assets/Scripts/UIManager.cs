@@ -15,6 +15,11 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI option1Text;
     public TextMeshProUGUI option2Text;
 
+    public Sprite upperVariation;
+    public Sprite lowerVariation;
+    public Sprite noneVariation;
+    public Sprite randomRangeVariation;
+
     private void Awake()
     {
         instance = this;
@@ -27,9 +32,65 @@ public class UIManager : MonoBehaviour
 
         option1Button.buttonCard = question.Option1;
         option1Text.text = question.Option1.descripcion;
+        DefineStats(option1Button);
 
         option2Button.buttonCard = question.Option2;
         option2Text.text = question.Option2.descripcion;
+        DefineStats(option2Button);
+    }
+
+    public void DefineStats(UIButton boton)
+    {
+        Card card = boton.buttonCard;
+
+        switch (card.risaEffect)
+        {
+            case RangeEffect.Up:
+                boton.risaStat.sprite = upperVariation;
+                break;
+            case RangeEffect.Down:
+                boton.risaStat.sprite = lowerVariation;
+                break;
+            case RangeEffect.RandomUpDown:
+                boton.risaStat.sprite = randomRangeVariation;
+                break;
+            case RangeEffect.None:
+                boton.risaStat.sprite = noneVariation;
+                break;
+        }
+
+        switch (card.audienciaEffect)
+        {
+            case RangeEffect.Up:
+                boton.audienciaStat.sprite = upperVariation;
+                break;
+            case RangeEffect.Down:
+                boton.audienciaStat.sprite = lowerVariation;
+                break;
+            case RangeEffect.RandomUpDown:
+                boton.audienciaStat.sprite = randomRangeVariation;
+                break;
+            case RangeEffect.None:
+                boton.audienciaStat.sprite = noneVariation;
+                break;
+        }
+
+        switch (card.familyFriendlyEffect)
+        {
+            case RangeEffect.Up:
+                boton.familyFriendlyStat.sprite = upperVariation;
+                break;
+            case RangeEffect.Down:
+                boton.familyFriendlyStat.sprite = lowerVariation;
+                break;
+            case RangeEffect.RandomUpDown:
+                boton.familyFriendlyStat.sprite = randomRangeVariation;
+                break;
+            case RangeEffect.None:
+                boton.familyFriendlyStat.sprite = noneVariation;
+                break;
+        }
+
     }
 
 }

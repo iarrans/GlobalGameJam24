@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enunciado: "Como quien necesita peerse, tienes la urgencia de soltar alg\xFAn comentario
     de algo:"
-  Option1: {fileID: 11400000, guid: f3386ddda000d034db31a272a580db1a, type: 2}
-  Option2: {fileID: 11400000, guid: f3386ddda000d034db31a272a580db1a, type: 2}
+  Option1: {fileID: 11400000, guid: 3237c78060d2cba4191ea67997910ff9, type: 2}
+  Option2: {fileID: 11400000, guid: 3237c78060d2cba4191ea67997910ff9, type: 2}

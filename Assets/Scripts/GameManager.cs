@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
             case RangeEffect.RandomUpDown:
                 newQuantity = UnityEngine.Random.Range(-quantity,quantity);
                 break;
+            case RangeEffect.None:
+                newQuantity = 0;
+                break;
         }
         return newQuantity;
     }

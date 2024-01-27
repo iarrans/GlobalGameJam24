@@ -1337,6 +1337,11 @@ MonoBehaviour:
   QuestionText: {fileID: 2143208539}
   option1Text: {fileID: 8278028}
   option2Text: {fileID: 728168009}
+  upperVariation: {fileID: 21300000, guid: a93111b126f71ae4fbcfef7f313bf49b, type: 3}
+  lowerVariation: {fileID: 21300000, guid: 28a548f0614cfb040a8257c3a7aae8e6, type: 3}
+  noneVariation: {fileID: 21300000, guid: 9832dde99db3fa441b13f7688d2f6777, type: 3}
+  randomRangeVariation: {fileID: 21300000, guid: e0dd4d1bd5b30914a98dfafb725a4c88,
+    type: 3}
 --- !u!224 &2138084536 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2136024304929272251, guid: 534fb83add1b8d5418d1579daa9e0356,
