@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,10 +19,9 @@ public class Card : ScriptableObject
 
     public float baseAmountChange;
 
-    public Animation mickeyAnimation;
-    public Animation invitadoAnimation;
-
-    public Animation publicoAnimation;
+    public string mickeyAnimation;
+    public string invitadoAnimation;
+    public string publicoAnimation;
 
     public Texture imagenEnPantalla;
 
