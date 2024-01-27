@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2adaa36fcce71b44b771d2edc204c61, type: 3}
+  m_Name: Q004
+  m_EditorClassIdentifier: 
+  enunciado: "Habr\xE1 que usar la trituradora que se han tra\xEDdo del basurero,
+    \xBFno?"
+  Option1: {fileID: 11400000, guid: d261f5533a1ed4c4ca21e6290767b609, type: 2}
+  Option2: {fileID: 11400000, guid: f76f6e3268e16564b9f75c94296f4ccd, type: 2}
