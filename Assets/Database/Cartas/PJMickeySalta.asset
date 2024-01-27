@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aad67e57b4cf314f9cfc81d564abbf4, type: 3}
-  m_Name: Personaje Animacion
+  m_Name: PJMickeySalta
   m_EditorClassIdentifier: 
-  descripcion: 
+  descripcion: Mickey salta
   risaEffect: 0
   audienciaEffect: 0
   familyFriendlyEffect: 0
-  cardType: 0
+  cardType: 2
   baseAmountChange: 0
-  mickeyAnimation: {fileID: 0}
-  invitadoAnimation: {fileID: 0}
-  publicoAnimation: {fileID: 0}
+  mickeyAnimation: Jump
+  invitadoAnimation: 
+  publicoAnimation: 
   imagenEnPantalla: {fileID: 0}
   efectoSonido: {fileID: 0}
