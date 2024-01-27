@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public List<Question> possibleQuestions;
     public AudioSource audioSource = null;
+    public GameObject screen = null;
 
     private void Awake()
     {
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("La cámara se ha agitado");
                 break;
             case CardType.PantallaFondo:
+                screen.GetComponent<Renderer>().material.mainTexture = carta.imagenEnPantalla;
                 Debug.Log("La pantalla de fondo ha cambiado");
                 break;
             case CardType.CambioLuz:

@@ -23,7 +23,7 @@ public class Card : ScriptableObject
 
     public Animation publicoAnimation;
 
-    public Sprite imagenEnPantalla;
+    public Texture imagenEnPantalla;
 
     public AudioClip efectoSonido;
 
