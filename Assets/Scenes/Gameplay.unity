@@ -1094,10 +1094,11 @@ MonoBehaviour:
   mickey: {fileID: 439873077}
   currentCompanion: {fileID: 0}
   possibleQuestions:
-  - {fileID: 11400000, guid: f53b465204fcdb44ebd38dd19f63f336, type: 2}
-  - {fileID: 11400000, guid: 02448621d7d8aaf48ae85db62d53527c, type: 2}
-  - {fileID: 11400000, guid: 28ab68c8358a7d244bbc100c267758cf, type: 2}
+  - {fileID: 11400000, guid: e769e448f53150148a12a95798e36aee, type: 2}
   - {fileID: 11400000, guid: 02a6d4dcf0eb17749963d3757061aa5e, type: 2}
+  - {fileID: 11400000, guid: 28ab68c8358a7d244bbc100c267758cf, type: 2}
+  - {fileID: 11400000, guid: 02448621d7d8aaf48ae85db62d53527c, type: 2}
+  - {fileID: 11400000, guid: f53b465204fcdb44ebd38dd19f63f336, type: 2}
   audioSource: {fileID: 980515673}
   screen: {fileID: 2013162572}
   invitadoSpawnPosition: {fileID: 382324929}
@@ -1110,6 +1111,7 @@ MonoBehaviour:
   spectators:
   - {fileID: 156515550}
   - {fileID: 0}
+  mainLight: {fileID: 1037209367}
 --- !u!1001 &728168007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1778,7 +1780,7 @@ GameObject:
   - component: {fileID: 1037209367}
   - component: {fileID: 1037209369}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: MainLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1795,7 +1797,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30

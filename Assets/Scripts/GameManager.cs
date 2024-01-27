@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.TextCore.Text;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,7 +34,9 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> possibleCharacters;
 
-    public List<GameObject> spectators;
+    public List<GameObject> spectators; //Hay que arreglarlo
+
+    public Light mainLight;
 
 
     private void Awake()
@@ -93,22 +96,21 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(CameraShake());
                 break;
             case CardType.PantallaFondo:
-                screen.GetComponent<Renderer>().material.mainTexture = carta.imagenEnPantalla;
-                Debug.Log("La pantalla de fondo ha cambiado");
+                StartCoroutine(ChangeScreenImage(carta));
                 break;
             case CardType.CambioLuz:
-                Debug.Log("La luz ha cambiado");
+                StartCoroutine(LightChange());
                 break;
             case CardType.EfectoSonido:
-                audioSource.clip = carta.efectoSonido;
-                audioSource.Play();
-                Debug.Log("*Sonido de martillo de goma*");
+                StartCoroutine(PlaySoundEffects(carta.efectoSonido));
+               
                 break;
             default:
                 break;
         }
-        ShowNextQuestion();
     }
+
+
 
     public void ChangeRisa(float quantity, RangeEffect effect)
     {
@@ -202,7 +204,8 @@ public class GameManager : MonoBehaviour
         }
         currentCompanion = null;
         character.SetActive(false);
-     }
+        ShowNextQuestion();
+    }
 
     public IEnumerator EnterCharacter()
     {
@@ -226,6 +229,7 @@ public class GameManager : MonoBehaviour
         character.transform.LookAt(invitadoSpawnPosition);
         character.GetComponent<Animator>().Play("IddleNeutral");
         character.transform.eulerAngles = new Vector3(0,0,0);
+        ShowNextQuestion();
     }
 
     public IEnumerator AnimateCharacter(Card carta)
@@ -243,10 +247,12 @@ public class GameManager : MonoBehaviour
 
         if (currentCompanion != null) currentCompanion.GetComponent<Animator>().Play("IddleNeutral");
         mickey.GetComponent<Animator>().Play("IddleNeutral");
+        ShowNextQuestion();
     }
 
     public IEnumerator AnimateSpectators(string publicoAnimation)
     {
+        /*
         foreach (GameObject spectator in spectators)
         {
             spectator.GetComponent<Animator>().Play(publicoAnimation);
@@ -255,13 +261,53 @@ public class GameManager : MonoBehaviour
         foreach (GameObject spectator in spectators)
         {
             spectator.GetComponent<Animator>().Play("SpectatorsIdle");
-        }
+        } */
+        yield return new WaitForSeconds(2);
+        ShowNextQuestion();
+       
     }
 
     public IEnumerator CameraShake()
     {
         Camera.main.DOShakePosition(2, 2, 2, 2, true);
         yield return new WaitForSeconds(2);
+        ShowNextQuestion();
+    }
+
+    public IEnumerator LightChange()
+    {
+        float originalIntensity = mainLight.intensity;    
+        while (mainLight.intensity > 0)
+        {
+            mainLight.intensity -= 0.2f;
+            yield return new WaitForSeconds(0.05f);
+        }
+        mainLight.intensity = 0;
+        yield return new WaitForSeconds(2f);
+        while (mainLight.intensity < 1)
+        {
+            mainLight.intensity += 0.05f;
+            yield return new WaitForSeconds(0.1f);
+        }
+        mainLight.intensity = originalIntensity;
+        ShowNextQuestion();
+    }
+
+    public IEnumerator ChangeScreenImage(Card carta)
+    {
+        screen.GetComponent<Renderer>().material.mainTexture = carta.imagenEnPantalla;
+        Debug.Log("La pantalla de fondo ha cambiado");
+        yield return new WaitForSeconds(2f);
+        ShowNextQuestion();
+    }
+
+    private IEnumerator PlaySoundEffects(AudioClip efectoSonido)
+    {
+        audioSource.clip = efectoSonido;
+        audioSource.Play();
+        Debug.Log("*Sonido de martillo de goma*");
+        yield return new WaitForSeconds(3);
+        ShowNextQuestion();
     }
 
 }
