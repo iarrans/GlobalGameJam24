@@ -74,19 +74,20 @@ public class AngryPeopleManager : MonoBehaviour
     {
         if (peopleList[chosen].field == "Risa")
         {
-            GameManager.instance.ChangeRisa(peopleList[chosen].strength * -1 * difficulty);
+            GameManager.instance.ChangeRisa(peopleList[chosen].strength * difficulty, RangeEffect.Down);
         }
         if (peopleList[chosen].field == "Audiencia")
         {
-            GameManager.instance.ChangeAudiencia(peopleList[chosen].strength * -1 * difficulty);
+            GameManager.instance.ChangeAudiencia(peopleList[chosen].strength * difficulty, RangeEffect.Down);
         }
         if (peopleList[chosen].field == "Family Friendly")
         {
-            GameManager.instance.ChangeFamilyFriendly(peopleList[chosen].strength * -1 * difficulty);
+            GameManager.instance.ChangeFamilyFriendly(peopleList[chosen].strength * difficulty, RangeEffect.Down);
         }
 
         if (!GameManager.instance.alive)
         {
+            molesto.SetActive(false);
             this.gameObject.SetActive(false);
             GameManager.instance.ShowNextQuestion();
             
