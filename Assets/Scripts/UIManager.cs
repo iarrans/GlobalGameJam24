@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
         instance = this;
     }
 
-    //TODO -> Función que, dada pregunta, prepara toda la info en la UI y asigna a los botones las cartas de las opciones
+    //TODO -> Fmodificar iconos de la UI de los botones
     public void PrepareCardsUI(Question question)
     {
         QuestionText.text = question.enunciado;

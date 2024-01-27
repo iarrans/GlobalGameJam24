@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Q1Card2
   m_EditorClassIdentifier: 
   descripcion: Hacer un comentario sobre lo fea que es la ropa del invitado
-  risaEffect: 1
-  audienciaEffect: 1
-  familyFriendlyEffect: -1
+  risaEffect: 2
+  audienciaEffect: 3
+  familyFriendlyEffect: 1
+  baseAmountChange: 2

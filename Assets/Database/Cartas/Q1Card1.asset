@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descripcion: Hacer un comentario de un conflicto geopolitico del que no tienes
     ni idea
-  risaEffect: -1
-  audienciaEffect: 1
-  familyFriendlyEffect: 0
+  risaEffect: 1
+  audienciaEffect: 2
+  familyFriendlyEffect: 3
+  baseAmountChange: 1

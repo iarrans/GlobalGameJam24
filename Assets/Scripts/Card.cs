@@ -8,10 +8,18 @@ public class Card : ScriptableObject
     public string descripcion;
 
     //Tipo y efecto de escoger esta carta
-    public float risaEffect;
+    public RangeEffect risaEffect;
 
-    public float audienciaEffect;
+    public RangeEffect audienciaEffect;
 
-    public float familyFriendlyEffect;
+    public RangeEffect familyFriendlyEffect;
+
+    public float baseAmountChange;
+
+}
+
+public enum RangeEffect
+{
+    None, Up, Down, RandomUpDown
 }
 

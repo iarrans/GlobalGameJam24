@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public float roundCounter = 0;
     public bool alive = true;
 
+    public GameObject currentCompanion = null; 
+
     public List<Question> possibleQuestions;
 
     private void Awake()
@@ -30,14 +32,15 @@ public class GameManager : MonoBehaviour
     public void ApplyCardResults(Card carta)
     {
         UIManager.instance.questionsCanvas.SetActive(false);
-        ChangeRisa(carta.risaEffect);
-        ChangeAudiencia(carta.audienciaEffect);
-        ChangeFamilyFriendly(carta.familyFriendlyEffect);
+        ChangeRisa(carta.baseAmountChange, carta.risaEffect);
+        ChangeAudiencia(carta.baseAmountChange, carta.audienciaEffect);
+        ChangeFamilyFriendly(carta.baseAmountChange, carta.familyFriendlyEffect);
         ShowNextQuestion();
     }
 
-    public void ChangeRisa(float quantity)
+    public void ChangeRisa(float quantity, RangeEffect effect)
     {
+        quantity = CalculateQuantityRange(quantity, effect);
         risa += quantity;
         if (risa <= 0)
         {
@@ -46,8 +49,9 @@ public class GameManager : MonoBehaviour
         }       
     }
 
-    public void ChangeAudiencia(float quantity)
+    public void ChangeAudiencia(float quantity, RangeEffect effect)
     {
+        quantity = CalculateQuantityRange(quantity, effect);
         audiencia += quantity;
         if (audiencia <= 0)
         {
@@ -56,14 +60,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeFamilyFriendly(float quantity)
+    public void ChangeFamilyFriendly(float quantity, RangeEffect effect)
     {
+        quantity = CalculateQuantityRange(quantity, effect);
         familyFriendly += quantity;
         if (familyFriendly <= 0)
         {
             alive = false;
             return;
         }
+    }
+
+    public float CalculateQuantityRange(float quantity, RangeEffect effect)
+    {
+        float newQuantity = quantity;
+        switch (effect)
+        {
+            case RangeEffect.Down:
+                newQuantity = quantity * -1;
+                break;
+            case RangeEffect.RandomUpDown:
+                newQuantity = UnityEngine.Random.Range(-quantity,quantity);
+                break;
+        }
+        return newQuantity;
     }
 
      private IEnumerator EndGame()
@@ -86,5 +106,6 @@ public class GameManager : MonoBehaviour
             StartCoroutine(EndGame());
         }
     }
+
 
 }
