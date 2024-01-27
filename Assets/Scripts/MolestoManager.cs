@@ -29,6 +29,7 @@ public class MolestoManager : MonoBehaviour
 
     [SerializeField]
     private GameObject molesto;
+    private GameObject m;
 
     [SerializeField]
     private GameObject spawnerTerr;
@@ -63,6 +64,7 @@ public class MolestoManager : MonoBehaviour
     {
         molesto.SetActive(false);
         waitTime = Random.Range(3, 10);
+        m = molesto.gameObject;
     }
 
     // Update is called once per frame
@@ -99,7 +101,7 @@ public class MolestoManager : MonoBehaviour
     {
         chosen = Random.Range(0, peopleList.Count);
         print(peopleList[chosen].personName);
-        molesto.gameObject.GetComponent<SpriteRenderer>().sprite = peopleList[chosen].image;
+        molesto = Instantiate(peopleList[chosen].sprite);
         molesto.SetActive(true);
         molestoTime = 0;
         
@@ -141,6 +143,8 @@ public class MolestoManager : MonoBehaviour
         {
             molesto.SetActive(false);
             MolestoHit = false;
+            Destroy(molesto);
+            molesto = m.gameObject;
         }
     }
 

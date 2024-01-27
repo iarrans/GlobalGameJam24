@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8e6972c53c9a94aa14e62ef0c3075b, type: 3}
   m_Name: MolestoImpropio
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 13d0be59dfd211e4daa8b281d2ebb19d, type: 3}
+  sprite: {fileID: 6580569058964634206, guid: 584e915ceb04d944c89a42f43e8b412a, type: 3}
   personName: Lepeggy Samuppet
   strength: 1
   field: Family Friendly

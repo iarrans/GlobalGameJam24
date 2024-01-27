@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8e6972c53c9a94aa14e62ef0c3075b, type: 3}
   m_Name: MolestoCortarollos
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: a7734e1a016b9d041add74c5a654aef5, type: 3}
+  sprite: {fileID: 3605841121649618256, guid: 60281c7bacc8c2f478465ca2f45de10f, type: 3}
   personName: Biggie Cheese
   strength: 1
   field: Risa
