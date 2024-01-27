@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> possibleCharacters;
 
-    public List<GameObject> spectators; //Hay que arreglarlo
+    public GameObject spectators; //Hay que arreglarlo
 
     public Light mainLight;
 
@@ -254,18 +254,10 @@ public class GameManager : MonoBehaviour
     }
 
     public IEnumerator AnimateSpectators(string publicoAnimation)
-    {
-        /*
-        foreach (GameObject spectator in spectators)
-        {
-            spectator.GetComponent<Animator>().Play(publicoAnimation);
-        }
-        yield return new WaitForSeconds(2);
-        foreach (GameObject spectator in spectators)
-        {
-            spectator.GetComponent<Animator>().Play("SpectatorsIdle");
-        } */
-        yield return new WaitForSeconds(2);
+    { 
+        spectators.GetComponent<Animator>().Play(publicoAnimation);
+        yield return new WaitForSeconds(3);
+        spectators.GetComponent<Animator>().Play("Idle");
         ShowNextQuestion();
        
     }

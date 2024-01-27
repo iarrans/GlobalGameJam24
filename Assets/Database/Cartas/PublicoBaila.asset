@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad67e57b4cf314f9cfc81d564abbf4, type: 3}
   m_Name: PublicoBaila
   m_EditorClassIdentifier: 
-  descripcion: Hacer la ola
+  descripcion: Happy
   risaEffect: 0
   audienciaEffect: 0
   familyFriendlyEffect: 0
@@ -20,6 +20,6 @@ MonoBehaviour:
   baseAmountChange: 0
   mickeyAnimation: 
   invitadoAnimation: 
-  publicoAnimation: Dance
+  publicoAnimation: Happy
   imagenEnPantalla: {fileID: 0}
   efectoSonido: {fileID: 0}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad67e57b4cf314f9cfc81d564abbf4, type: 3}
   m_Name: PublicoFlip
   m_EditorClassIdentifier: 
-  descripcion: Flipping Dance
+  descripcion: Sad
   risaEffect: 0
   audienciaEffect: 0
   familyFriendlyEffect: 0
@@ -20,6 +20,6 @@ MonoBehaviour:
   baseAmountChange: 0
   mickeyAnimation: 
   invitadoAnimation: 
-  publicoAnimation: Flip
+  publicoAnimation: Sad
   imagenEnPantalla: {fileID: 0}
   efectoSonido: {fileID: 0}
