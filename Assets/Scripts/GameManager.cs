@@ -1,8 +1,10 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.TextCore.Text;
 
 public class GameManager : MonoBehaviour
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         roundCounter = 0;
+        DOTween.Init();
     }
 
     private void Start()
@@ -87,7 +90,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("El público parece molesto");
                 break;
             case CardType.animacionCam:
-                Debug.Log("La cámara se ha agitado");
+                StartCoroutine(CameraShake());
                 break;
             case CardType.PantallaFondo:
                 screen.GetComponent<Renderer>().material.mainTexture = carta.imagenEnPantalla;
@@ -251,8 +254,14 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         foreach (GameObject spectator in spectators)
         {
-            spectator.GetComponent<Animator>().Play("Idle");
+            spectator.GetComponent<Animator>().Play("SpectatorsIdle");
         }
+    }
+
+    public IEnumerator CameraShake()
+    {
+        Camera.main.DOShakePosition(2, 2, 2, 2, true);
+        yield return new WaitForSeconds(2);
     }
 
 }
