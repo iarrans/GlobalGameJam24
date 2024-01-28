@@ -177,6 +177,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowNextQuestion()
     {
+        UIManager.instance.contadorRondas.text = "Minutos en prime time: " + roundCounter;
         if (alive) {
             int randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
             Question question = possibleQuestions[randomIndex];

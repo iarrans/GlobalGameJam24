@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour
     public Slider audienciaSlider;
     public Slider familyFriendlySlider;
 
+    public TextMeshProUGUI contadorRondas;
+
     private void Awake()
     {
         instance = this;
