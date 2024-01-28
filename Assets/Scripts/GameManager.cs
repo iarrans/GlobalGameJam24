@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal.Internal;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -188,6 +189,7 @@ public class GameManager : MonoBehaviour
         }
 
         mainLight.intensity = 0;
+        yield return new WaitForSeconds(2);
         //Aquí audio de micky pa casa
 
         end = invitadoSpawnPosition.position;
@@ -202,7 +204,9 @@ public class GameManager : MonoBehaviour
         mickey.SetActive(false);
         character.SetActive(false);
         yield return null;
-     }
+        MainUtils.score = roundCounter;
+        SceneManager.LoadScene("Game Over");
+    }
 
     public void ShowNextQuestion()
     {
