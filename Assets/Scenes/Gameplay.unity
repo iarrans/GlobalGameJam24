@@ -3426,6 +3426,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 669780450699095095, guid: db5f6aa560e28ae459efe3ec5d092169,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7781265e3a1049e4d8fd3ca9d962b183,
+        type: 3}
+    - target: {fileID: 2467927912906577146, guid: db5f6aa560e28ae459efe3ec5d092169,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e74754479caf89b4a8746fa7018a4bb2,
+        type: 3}
     - target: {fileID: 5183337330135611442, guid: db5f6aa560e28ae459efe3ec5d092169,
         type: 3}
       propertyPath: m_RootOrder
@@ -3481,6 +3493,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6410173395277148226, guid: db5f6aa560e28ae459efe3ec5d092169,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1eabcf1ba90a4f94abe84716fd6ca957,
+        type: 3}
+    - target: {fileID: 6610515237075667702, guid: db5f6aa560e28ae459efe3ec5d092169,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 696bf3828cbb30a45b68885260cd8d2f,
+        type: 3}
+    - target: {fileID: 6723671227027431775, guid: db5f6aa560e28ae459efe3ec5d092169,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c20a28a73bb67ef409acf5a6e76338bd,
+        type: 3}
+    - target: {fileID: 6779982588732862244, guid: db5f6aa560e28ae459efe3ec5d092169,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd1622b0ab03db0468cf665e52347e19,
+        type: 3}
     - target: {fileID: 8447677452000487147, guid: db5f6aa560e28ae459efe3ec5d092169,
         type: 3}
       propertyPath: m_Name
