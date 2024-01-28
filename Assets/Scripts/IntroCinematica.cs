@@ -39,13 +39,13 @@ public class IntroCinematica : MonoBehaviour
         // speed should be 1 unit per second
         while (Mickey.transform.position != end)
         {
-            Mickey.transform.position = Vector3.MoveTowards(Mickey.transform.position, end, 2 * Time.deltaTime);
+            Mickey.transform.position = Vector3.MoveTowards(Mickey.transform.position, end, 4 * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
 
         Mickey.transform.eulerAngles = new Vector3(0, 0, 0);//128
         Mickey.GetComponent<Animator>().Play("IddleNeutral");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         audio.Play();
         yield return new WaitForSeconds(1);
         Mickey.GetComponent<Animator>().Play("IddleTalk");
