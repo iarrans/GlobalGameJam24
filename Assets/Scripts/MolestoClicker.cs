@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MolestoClicker : MonoBehaviour
 {
+    public Sprite face2;
     private void OnMouseDown()
     {
         //this.gameObject.SetActive(false);

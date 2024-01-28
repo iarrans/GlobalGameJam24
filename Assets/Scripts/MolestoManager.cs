@@ -141,6 +141,19 @@ public class MolestoManager : MonoBehaviour
     {
         speed = 5;
         GameObject exitP = exitPoints[exit];
+        Sprite secondFace = molesto.GetComponent<MolestoClicker>().face2;
+        if (chosen == 0)
+        {
+            molesto.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = secondFace;
+        }
+        else if (chosen == 1)
+        {
+            molesto.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = secondFace;
+        }
+        else
+        {
+            molesto.transform.GetChild(2).GetComponent<SpriteRenderer>().sprite = secondFace;
+        }
 
         molesto.transform.position = Vector3.MoveTowards(molesto.transform.position, exitP.transform.position, Time.deltaTime * speed);
         if (molesto.transform.position == exitP.transform.position)
