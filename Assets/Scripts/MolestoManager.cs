@@ -196,6 +196,7 @@ public class MolestoManager : MonoBehaviour
 
         if (!GameManager.instance.alive)
         {
+            audioSource.Stop();
             molesto.SetActive(false);
             this.gameObject.SetActive(false);
             GameManager.instance.ShowNextQuestion();

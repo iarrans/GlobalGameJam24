@@ -180,7 +180,7 @@ public class GameManager : MonoBehaviour
      {
         UIManager.instance.questionsCanvas.SetActive(false);
 
-        float speed = CompanionSpeed;
+        float speed = 5;
 
         GameObject character = GameObject.Instantiate(baston, bastonSpawn);
         character.transform.position = bastonSpawn.position;
@@ -195,7 +195,8 @@ public class GameManager : MonoBehaviour
 
         mainLight.intensity = 0;
         yield return new WaitForSeconds(2);
-        //Aquí audio de micky pa casa
+        othersfx.clip = sfx[0];
+        othersfx.Play();
 
         end = invitadoSpawnPosition.position;
         // speed should be 1 unit per second
