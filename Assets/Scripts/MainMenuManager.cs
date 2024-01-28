@@ -48,4 +48,10 @@ public class MainMenuManager : MonoBehaviour
         mainMenu.SetActive(true);
     }
 
+    public void ExitGame()
+    {
+        Debug.Log("Astro la vista");
+        Application.Quit();
+    }
+
 }
