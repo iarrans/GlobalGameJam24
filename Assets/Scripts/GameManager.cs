@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal.Internal;
@@ -67,9 +68,9 @@ public class GameManager : MonoBehaviour
     public void ApplyCardResults(Card carta)
     {
         UIManager.instance.questionsCanvas.SetActive(false);
-        ChangeRisa(carta.baseAmountChange, carta.risaEffect);
-        ChangeAudiencia(carta.baseAmountChange, carta.audienciaEffect);
-        ChangeFamilyFriendly(carta.baseAmountChange, carta.familyFriendlyEffect);
+        ChangeRisa(carta.baseAmountChange * roundCounter / 1.5f, carta.risaEffect);
+        ChangeAudiencia(carta.baseAmountChange * roundCounter / 1.5f, carta.audienciaEffect);
+        ChangeFamilyFriendly(carta.baseAmountChange * roundCounter / 1.5f, carta.familyFriendlyEffect);
         switch (carta.cardType) {
             case CardType.invitadoSale:
                 if (currentCompanion != null)
@@ -182,6 +183,9 @@ public class GameManager : MonoBehaviour
 
         float speed = 5;
 
+        Mickey.clip = sfx[4];
+        Mickey.Play();
+
         GameObject character = GameObject.Instantiate(baston, bastonSpawn);
         character.transform.position = bastonSpawn.position;
 
@@ -256,6 +260,9 @@ public class GameManager : MonoBehaviour
         character.GetComponent<Animator>().Play("Walking");
         character.transform.eulerAngles = new Vector3(0, -90, 0);
 
+        Publico.clip = sfx[2];
+        Publico.Play();
+
         float speed = CompanionSpeed;
         Vector3 end = invitadoSpawnPosition.position;
         // speed should be 1 unit per second
@@ -281,6 +288,12 @@ public class GameManager : MonoBehaviour
         currentCompanion = character;
         character.GetComponent<Animator>().Play("Walking");
 
+        Mickey.clip = sfx[6];
+        Mickey.Play();
+
+        Publico.clip = sfx[3];
+        Publico.Play();
+
         Vector3 end = invitadoPosition.position;
         // speed should be 1 unit per second
         while (character.transform.position != end)
@@ -292,6 +305,10 @@ public class GameManager : MonoBehaviour
         character.transform.LookAt(invitadoSpawnPosition);
         character.GetComponent<Animator>().Play("IddleNeutral");
         character.transform.eulerAngles = new Vector3(0,0,0);
+
+        Invitado.clip = currentCompanion.GetComponent<AudioInvitado>().audioInvitado;
+        Invitado.Play();
+
         ShowNextQuestion();
     }
 
@@ -304,6 +321,8 @@ public class GameManager : MonoBehaviour
         if (currentCompanion != null && carta.invitadoAnimation != null && carta.invitadoAnimation != "")
         {
             currentCompanion.GetComponent<Animator>().Play(carta.invitadoAnimation);
+            Invitado.clip = currentCompanion.GetComponent<AudioInvitado>().audioInvitado;
+            Invitado.Play();
         }
 
         yield return new WaitForSeconds(3);
@@ -315,7 +334,19 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator AnimateSpectators(string publicoAnimation)
     { 
+        
         spectators.GetComponent<Animator>().Play(publicoAnimation);
+
+        if(publicoAnimation == "Happy")
+        {
+            Publico.clip = sfx[2];
+            Publico.Play();
+        }else if (publicoAnimation == "Sad")
+        {
+            Publico.clip = sfx[3];
+            Publico.Play();
+        }
+
         yield return new WaitForSeconds(3);
         spectators.GetComponent<Animator>().Play("Idle");
         ShowNextQuestion();
