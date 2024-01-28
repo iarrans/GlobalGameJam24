@@ -178,14 +178,28 @@ public class GameManager : MonoBehaviour
     public void ShowNextQuestion()
     {
         UIManager.instance.contadorRondas.text = "Minutos en prime time: " + roundCounter;
+        int randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
+        Question question = possibleQuestions[randomIndex];
         if (alive) {
-            int randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
-            Question question = possibleQuestions[randomIndex];
-
-            while (question.invitado && currentCompanion == false)
+            if (roundCounter % 10 == 0)
             {
-                randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
-                question = possibleQuestions[randomIndex];
+                if (currentCompanion != null)
+                {
+                    question = possibleQuestions[7];
+                } else
+                {
+                    question = possibleQuestions[9];
+                }
+            }
+            else
+            {
+                
+
+                while (question.invitado && currentCompanion == false)
+                {
+                    randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
+                    question = possibleQuestions[randomIndex];
+                }
             }
             UIManager.instance.questionsCanvas.SetActive(true);
             UIManager.instance.PrepareCardsUI(question);
