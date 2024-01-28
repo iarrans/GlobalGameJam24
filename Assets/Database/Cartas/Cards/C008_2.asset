@@ -16,10 +16,10 @@ MonoBehaviour:
   risaEffect: 0
   audienciaEffect: 0
   familyFriendlyEffect: 0
-  cardType: 5
+  cardType: 3
   baseAmountChange: 1
   mickeyAnimation: 
   invitadoAnimation: 
-  publicoAnimation: 
+  publicoAnimation: Sad
   imagenEnPantalla: {fileID: 0}
   efectoSonido: {fileID: 0}

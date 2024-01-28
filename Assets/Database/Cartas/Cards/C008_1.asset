@@ -16,7 +16,7 @@ MonoBehaviour:
   risaEffect: 3
   audienciaEffect: 1
   familyFriendlyEffect: 3
-  cardType: 0
+  cardType: 1
   baseAmountChange: 1
   mickeyAnimation: 
   invitadoAnimation: 

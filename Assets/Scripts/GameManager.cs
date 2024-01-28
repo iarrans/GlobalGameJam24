@@ -91,8 +91,7 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(AnimateSpectators(carta.publicoAnimation));
                 break;
             case CardType.Molesto:
-                MolestoManager.instance.SpawnMolesto();
-                Debug.Log("El público parece molesto");
+                StartCoroutine(SpawnMolesto());
                 break;
             case CardType.animacionCam:
                 StartCoroutine(CameraShake());
@@ -105,7 +104,6 @@ public class GameManager : MonoBehaviour
                 break;
             case CardType.EfectoSonido:
                 StartCoroutine(PlaySoundEffects(carta.efectoSonido));
-               
                 break;
             default:
                 break;
@@ -181,14 +179,14 @@ public class GameManager : MonoBehaviour
         int randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
         Question question = possibleQuestions[randomIndex];
         if (alive) {
-            if (roundCounter % 10 == 0)
+            if (roundCounter % 10 == 0 && roundCounter != 0)
             {
                 if (currentCompanion != null)
                 {
-                    question = possibleQuestions[7];
+                    question = possibleQuestions[9];
                 } else
                 {
-                    question = possibleQuestions[9];
+                    question = possibleQuestions[7];
                 }
             }
             else
@@ -323,6 +321,13 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
         Debug.Log("*Sonido de martillo de goma*");
         yield return new WaitForSeconds(3);
+        ShowNextQuestion();
+    }
+
+    private IEnumerator SpawnMolesto()
+    {
+        MolestoManager.instance.SpawnMolesto();
+        yield return new WaitForSeconds(2);
         ShowNextQuestion();
     }
 

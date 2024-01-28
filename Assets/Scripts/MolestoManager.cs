@@ -99,6 +99,10 @@ public class MolestoManager : MonoBehaviour
 
     public void SpawnMolesto()
     {
+        if (molesto.activeSelf)
+        {
+            return;
+        }
         chosen = Random.Range(0, peopleList.Count);
         print(peopleList[chosen].personName);
         molesto = Instantiate(peopleList[chosen].sprite);
