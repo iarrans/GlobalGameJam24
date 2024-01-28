@@ -2748,6 +2748,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8700617353114198275, guid: 310234b685c95494a97d6cf380710871,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 310234b685c95494a97d6cf380710871,
         type: 3}
       propertyPath: m_RootOrder
@@ -5529,10 +5534,10 @@ MonoBehaviour:
   QuestionText: {fileID: 2143208539}
   option1Text: {fileID: 8278028}
   option2Text: {fileID: 728168009}
-  upperVariation: {fileID: 21300000, guid: 9588cb1eba9427c4cb31dddcb0904905, type: 3}
-  lowerVariation: {fileID: 21300000, guid: 78ca1631d376b6b47811c06e1bba04aa, type: 3}
-  noneVariation: {fileID: 21300000, guid: 3818704ef2d0fd549889a1950667c253, type: 3}
-  randomRangeVariation: {fileID: 21300000, guid: 580588e24d9dc984c888b18141f63bd5,
+  upperVariation: {fileID: 21300000, guid: 0461df50695607441b4eedeb65ededa3, type: 3}
+  lowerVariation: {fileID: 21300000, guid: 12664f1dab082bc46a14c5aa25f4907f, type: 3}
+  noneVariation: {fileID: 21300000, guid: 3ca158d9190414741bac8833b43402e9, type: 3}
+  randomRangeVariation: {fileID: 21300000, guid: c02c7f917127bf04ab2712b83bef55e2,
     type: 3}
   risaSlider: {fileID: 1272316908}
   audienciaSlider: {fileID: 1433088880}
@@ -5888,6 +5893,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930600850}
     m_Modifications:
+    - target: {fileID: 754784704454411760, guid: 534fb83add1b8d5418d1579daa9e0356,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0461df50695607441b4eedeb65ededa3,
+        type: 3}
     - target: {fileID: 2136024304929272251, guid: 534fb83add1b8d5418d1579daa9e0356,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6003,6 +6014,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5503363260252007627, guid: 534fb83add1b8d5418d1579daa9e0356,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 12664f1dab082bc46a14c5aa25f4907f,
+        type: 3}
     - target: {fileID: 6186052949379963844, guid: 534fb83add1b8d5418d1579daa9e0356,
         type: 3}
       propertyPath: m_Name
@@ -6058,6 +6075,12 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3f92a07ed5069184d88e0edbcd0bb6d1,
+        type: 3}
+    - target: {fileID: 8630454814715864917, guid: 534fb83add1b8d5418d1579daa9e0356,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c02c7f917127bf04ab2712b83bef55e2,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
