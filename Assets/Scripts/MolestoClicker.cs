@@ -5,6 +5,9 @@ using UnityEngine;
 public class MolestoClicker : MonoBehaviour
 {
     public Sprite face2;
+
+    public List<AudioClip> audios;
+
     private void OnMouseDown()
     {
         //this.gameObject.SetActive(false);

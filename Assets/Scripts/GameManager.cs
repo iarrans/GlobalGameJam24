@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour
     public Transform bastonFinPosition;
     public Transform bastonSpawn;
 
+    public List<AudioClip> sfx;
+    public AudioSource Mickey;
+    public AudioSource Publico;
+    public AudioSource Invitado;
+    public AudioSource othersfx;
 
     private void Awake()
     {

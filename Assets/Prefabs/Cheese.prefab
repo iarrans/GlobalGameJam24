@@ -230,6 +230,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   face2: {fileID: 21300000, guid: b05c08cc3d2a04c43b7b59c4525d16f7, type: 3}
+  audios:
+  - {fileID: 8300000, guid: 64735a1ca2f0e034483d6f59c5fe75de, type: 3}
+  - {fileID: 8300000, guid: ee9553444d1ca3348a4da0f3a5b33784, type: 3}
+  - {fileID: 8300000, guid: 3e6623b738b67fb499e3cc07c88a7b29, type: 3}
 --- !u!1 &3827895409803244436
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,6 +54,8 @@ public class MolestoManager : MonoBehaviour
 
     public bool MolestoHit = false;
 
+    public AudioSource audioSource;
+
     void Awake()
     {
         instance = this;
@@ -107,6 +109,14 @@ public class MolestoManager : MonoBehaviour
         print(peopleList[chosen].personName);
         molesto = Instantiate(peopleList[chosen].sprite);
         molesto.SetActive(true);
+
+        //audio
+        MolestoClicker cliker = molesto.GetComponent<MolestoClicker>();
+        int randomIndex = Random.Range(0, cliker.audios.Count);
+        AudioClip molestoAudio = cliker.audios[randomIndex];
+        audioSource.clip = molestoAudio;
+        audioSource.Play();
+
         molestoTime = 0;
         
         if (chosen == 0)
@@ -139,6 +149,7 @@ public class MolestoManager : MonoBehaviour
 
     void MolestoLeave()
     {
+        audioSource.Stop();
         speed = 5;
         GameObject exitP = exitPoints[exit];
         Sprite secondFace = molesto.GetComponent<MolestoClicker>().face2;

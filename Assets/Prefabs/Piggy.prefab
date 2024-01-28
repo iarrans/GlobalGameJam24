@@ -378,6 +378,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   face2: {fileID: 21300000, guid: 299b245673e8e424b83bdd60a7652dc0, type: 3}
+  audios:
+  - {fileID: 8300000, guid: c0d52d1b84a167643923dcd1164318f7, type: 3}
+  - {fileID: 8300000, guid: a6ae4a196b2092741873bb08a65c96fc, type: 3}
+  - {fileID: 8300000, guid: f21374f3f8a753043805a015b69965b4, type: 3}
 --- !u!95 &5143642454354807267
 Animator:
   serializedVersion: 5
