@@ -181,6 +181,12 @@ public class GameManager : MonoBehaviour
         if (alive) {
             int randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
             Question question = possibleQuestions[randomIndex];
+
+            while (question.invitado && currentCompanion == false)
+            {
+                randomIndex = UnityEngine.Random.Range(0, possibleQuestions.Count);
+                question = possibleQuestions[randomIndex];
+            }
             UIManager.instance.questionsCanvas.SetActive(true);
             UIManager.instance.PrepareCardsUI(question);
             roundCounter++;
