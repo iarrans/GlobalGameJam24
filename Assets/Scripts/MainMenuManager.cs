@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public static MainMenuManager instance;
+    //public static MainMenuManager instance;
 
     public GameObject mainMenu;
     public GameObject creditsMenu;
@@ -14,7 +14,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        //instance = this;
     }
 
     void Start()
@@ -25,8 +25,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("Start");
-        //SceneManager.LoadScene(gameScene);
+        SceneManager.LoadScene("Intro");
     }
 
     public void StartTutorial()
