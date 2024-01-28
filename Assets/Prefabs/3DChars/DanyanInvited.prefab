@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ba48b43fadd6b60418dba47cb4825316,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba48b43fadd6b60418dba47cb4825316,
         type: 3}
@@ -63,11 +63,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -514656091398551866, guid: ba48b43fadd6b60418dba47cb4825316,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 58706b642ff83c14c8d5451de42f5a41, type: 2}
     - target: {fileID: 919132149155446097, guid: ba48b43fadd6b60418dba47cb4825316,
         type: 3}
       propertyPath: m_Name
-      value: Danyan Variant
+      value: DanyanInvited
       objectReference: {fileID: 0}
+    - target: {fileID: 5074512353664290214, guid: ba48b43fadd6b60418dba47cb4825316,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b3de8d1ee6479d4a8a2f5288abf4f1f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: ba48b43fadd6b60418dba47cb4825316, type: 3}
