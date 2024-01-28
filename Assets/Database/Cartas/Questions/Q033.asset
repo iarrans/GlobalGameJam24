@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Q033
   m_EditorClassIdentifier: 
   enunciado: Se te ha olvidado el nombre del invitado
-  Option1: {fileID: 11400000, guid: 42ca74c0f484b4444977e4f4b52a9f46, type: 2}
-  Option2: {fileID: 11400000, guid: 8e99c56824b476b4f869056899712f20, type: 2}
+  Option1: {fileID: 11400000, guid: 7066b1325bf177349adc7144de454d52, type: 2}
+  Option2: {fileID: 11400000, guid: a34d344c0074f6743b9fc688076cde91, type: 2}
   invitado: 1

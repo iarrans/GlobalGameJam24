@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad67e57b4cf314f9cfc81d564abbf4, type: 3}
   m_Name: C030_2
   m_EditorClassIdentifier: 
-  descripcion: 
+  descripcion: Que les den, que los que hacen deporte no ven la tele
   risaEffect: 0
-  audienciaEffect: 0
-  familyFriendlyEffect: 0
-  cardType: 0
-  baseAmountChange: 0
+  audienciaEffect: 1
+  familyFriendlyEffect: 2
+  cardType: 4
+  baseAmountChange: 1
   mickeyAnimation: 
   invitadoAnimation: 
   publicoAnimation: 

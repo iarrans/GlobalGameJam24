@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad67e57b4cf314f9cfc81d564abbf4, type: 3}
   m_Name: C032_1
   m_EditorClassIdentifier: 
-  descripcion: 
-  risaEffect: 0
-  audienciaEffect: 0
-  familyFriendlyEffect: 0
-  cardType: 0
-  baseAmountChange: 0
+  descripcion: Absolutamente nada
+  risaEffect: 3
+  audienciaEffect: 3
+  familyFriendlyEffect: 3
+  cardType: 7
+  baseAmountChange: 1
   mickeyAnimation: 
   invitadoAnimation: 
   publicoAnimation: 

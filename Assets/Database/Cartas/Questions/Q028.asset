@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Q028
   m_EditorClassIdentifier: 
   enunciado: "Tienes una resaca enorme, pero a\xFAn queda por rellenar bastante programa"
-  Option1: {fileID: 11400000, guid: bd95f289f74f9b045b90928a0ae3f7d2, type: 2}
-  Option2: {fileID: 11400000, guid: 8ac045ad680a1ea4486b553ede02c7f1, type: 2}
+  Option1: {fileID: 11400000, guid: c8d4cc26468f35443b4f6bc15a030a09, type: 2}
+  Option2: {fileID: 11400000, guid: 22685ac2c45626a4698e95ebbdf55e58, type: 2}
   invitado: 0

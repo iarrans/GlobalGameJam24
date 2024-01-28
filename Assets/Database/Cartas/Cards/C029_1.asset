@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad67e57b4cf314f9cfc81d564abbf4, type: 3}
   m_Name: C029_1
   m_EditorClassIdentifier: 
-  descripcion: 
-  risaEffect: 0
-  audienciaEffect: 0
+  descripcion: Bailamos a lo Desdentao
+  risaEffect: 1
+  audienciaEffect: 3
   familyFriendlyEffect: 0
-  cardType: 0
-  baseAmountChange: 0
+  cardType: 8
+  baseAmountChange: 1
   mickeyAnimation: 
   invitadoAnimation: 
   publicoAnimation: 
   imagenEnPantalla: {fileID: 0}
-  efectoSonido: {fileID: 0}
+  efectoSonido: {fileID: 8300000, guid: cc897b4ae7fca0e4b96431b6f588a59f, type: 3}

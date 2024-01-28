@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Q031
   m_EditorClassIdentifier: 
   enunciado: "Programa especial de halloween, \xBFC\xF3mo asustas a los ni\xF1os?"
-  Option1: {fileID: 11400000, guid: 374e3e98de9dce64a97bee4f32d1ee8d, type: 2}
-  Option2: {fileID: 11400000, guid: 918e7b412188a624b92947fc740579a2, type: 2}
+  Option1: {fileID: 11400000, guid: be226d32de4b87e4aa1e6a69e253b000, type: 2}
+  Option2: {fileID: 11400000, guid: 0e56720d6effc69438783d8f06c568c1, type: 2}
   invitado: 0

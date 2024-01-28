@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Q029
   m_EditorClassIdentifier: 
   enunciado: "Van a poner m\xFAsica. \xBFQue baile hacemos?"
-  Option1: {fileID: 11400000, guid: 52b4733c236c98d4a8c7caa0666b4cf3, type: 2}
-  Option2: {fileID: 11400000, guid: ef34ee53807007e4db6507b74dbb3bbd, type: 2}
+  Option1: {fileID: 11400000, guid: 2c196367921b264479dafd926c66f1f7, type: 2}
+  Option2: {fileID: 11400000, guid: b313054e9b8a52c45bf84f4c483fb173, type: 2}
   invitado: 0

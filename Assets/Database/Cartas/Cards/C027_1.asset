@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad67e57b4cf314f9cfc81d564abbf4, type: 3}
   m_Name: C027_1
   m_EditorClassIdentifier: 
-  descripcion: 
+  descripcion: Todo esto es un videojuego
   risaEffect: 0
-  audienciaEffect: 0
+  audienciaEffect: 3
   familyFriendlyEffect: 0
-  cardType: 0
-  baseAmountChange: 0
+  cardType: 5
+  baseAmountChange: 2
   mickeyAnimation: 
   invitadoAnimation: 
   publicoAnimation: 

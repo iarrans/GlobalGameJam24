@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad67e57b4cf314f9cfc81d564abbf4, type: 3}
   m_Name: C029_2
   m_EditorClassIdentifier: 
-  descripcion: 
-  risaEffect: 0
-  audienciaEffect: 0
+  descripcion: "El baile m\xE1s cringe que haya"
+  risaEffect: 3
+  audienciaEffect: 2
   familyFriendlyEffect: 0
-  cardType: 0
-  baseAmountChange: 0
+  cardType: 3
+  baseAmountChange: 1
   mickeyAnimation: 
   invitadoAnimation: 
-  publicoAnimation: 
+  publicoAnimation: Sad
   imagenEnPantalla: {fileID: 0}
   efectoSonido: {fileID: 0}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Q032
   m_EditorClassIdentifier: 
   enunciado: "\xBFQue naranjales hacemos ahora?"
-  Option1: {fileID: 11400000, guid: 24fd52e02705c1146ae2c781b1f221f6, type: 2}
-  Option2: {fileID: 11400000, guid: e459b6f331ba7754f8b2af6dfb29e3ce, type: 2}
+  Option1: {fileID: 11400000, guid: 1d1fc6e4c3dccfe42ba6c06a4493fdde, type: 2}
+  Option2: {fileID: 11400000, guid: 5b8386490aed1084a88399bdd60f98f5, type: 2}
   invitado: 0

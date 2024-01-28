@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Q030
   m_EditorClassIdentifier: 
   enunciado: "Los patrocinadores te piden que hagas publicidad de alg\xFAn deporte"
-  Option1: {fileID: 11400000, guid: d261f5533a1ed4c4ca21e6290767b609, type: 2}
-  Option2: {fileID: 11400000, guid: f76f6e3268e16564b9f75c94296f4ccd, type: 2}
+  Option1: {fileID: 11400000, guid: de53bc7fb51884f46a0b7b25f3f1972d, type: 2}
+  Option2: {fileID: 11400000, guid: 28da3490aa5fe1442b469759e0e0685b, type: 2}
   invitado: 0

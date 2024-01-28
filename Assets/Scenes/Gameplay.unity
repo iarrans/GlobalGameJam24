@@ -1458,6 +1458,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5f87be0671b683a42898bcd651736657, type: 2}
   - {fileID: 11400000, guid: bdfa5e96855a57544877a4c011bbda84, type: 2}
   - {fileID: 11400000, guid: d5e61fc92f35d5e42bc67328da658c05, type: 2}
+  - {fileID: 11400000, guid: 4d30862519d944347aabe3462217bbf3, type: 2}
+  - {fileID: 11400000, guid: e04e2ef61d2477b4e8d682b4bbd73ea5, type: 2}
+  - {fileID: 11400000, guid: e03fcc223d3e4d74db1e1130981c18fa, type: 2}
+  - {fileID: 11400000, guid: 7694c6e773aba744d9ec292c61fd42ab, type: 2}
+  - {fileID: 11400000, guid: 4f846ab3ac7b8f94f9bf710885b96c52, type: 2}
+  - {fileID: 11400000, guid: 25f11310b20342a40a4fb0ffb925e8d4, type: 2}
+  - {fileID: 11400000, guid: 6ea3a21a96ebf0c4397e33c756924b79, type: 2}
+  - {fileID: 11400000, guid: 54cda9b614dfff24dbe398326c3d0a62, type: 2}
+  - {fileID: 11400000, guid: 42204f6792381d2458d38b2870a87925, type: 2}
+  - {fileID: 11400000, guid: 16a577c1a791bc14cb6b37a330512685, type: 2}
+  - {fileID: 11400000, guid: eb7b3875235568947be5e81facf23eb9, type: 2}
+  - {fileID: 11400000, guid: 4e81b3f33f65f2445b78e534fbb4c0e5, type: 2}
+  - {fileID: 11400000, guid: 472ebb97f8d2950498c60a4c24d4020c, type: 2}
+  - {fileID: 11400000, guid: f702fe8065ed6f6448909081259928ca, type: 2}
+  - {fileID: 11400000, guid: c71d096659b4f024ea00fb7750b3fb6a, type: 2}
+  - {fileID: 11400000, guid: 333626aad3da96047838310e94327558, type: 2}
+  - {fileID: 11400000, guid: b14ea894b967a3b4ea84d2e052ec6810, type: 2}
+  - {fileID: 11400000, guid: 1df515ded4a53c045bb7a82219d4eba1, type: 2}
+  - {fileID: 11400000, guid: 3e088a3eaca55e74bbe9959510a6e02b, type: 2}
+  - {fileID: 11400000, guid: b44ef6799ef7fdf40a01a5dcec379e9b, type: 2}
+  - {fileID: 11400000, guid: 956b3f03ec9fcdc40adbe53caa655c38, type: 2}
+  - {fileID: 11400000, guid: e62a3d7f4ef228949831bce660ba2674, type: 2}
   audioSource: {fileID: 980515673}
   screen: {fileID: 781581064}
   invitadoSpawnPosition: {fileID: 382324929}

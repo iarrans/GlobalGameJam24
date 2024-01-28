@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Q026
   m_EditorClassIdentifier: 
   enunciado: Decides sorprender a la audiencia con una cruda verdad
-  Option1: {fileID: 11400000, guid: 090c06c069dde144581b53c11be25100, type: 2}
-  Option2: {fileID: 11400000, guid: 7a4dd5b041e968e458b3a49503f17ada, type: 2}
-  invitado: 1
+  Option1: {fileID: 11400000, guid: 1925ff50b06921748965abae78030839, type: 2}
+  Option2: {fileID: 11400000, guid: ab482df708382da4ea6aded5933bc75a, type: 2}
+  invitado: 0

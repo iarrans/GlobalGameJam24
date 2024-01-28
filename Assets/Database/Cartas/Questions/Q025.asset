@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Q025
   m_EditorClassIdentifier: 
   enunciado: "Secci\xF3n de parecidos. Decides sacarle al invitado parecido con"
-  Option1: {fileID: 11400000, guid: 2fc6fb339138071409e74d52a8586c82, type: 2}
-  Option2: {fileID: 11400000, guid: 50a607d6857b8eb4083f4661a9c725b3, type: 2}
+  Option1: {fileID: 11400000, guid: 9fdaad0879638f4499e2f2e02f36e4d7, type: 2}
+  Option2: {fileID: 11400000, guid: 746d5c9eefed89d4d891144b9872562e, type: 2}
   invitado: 1
