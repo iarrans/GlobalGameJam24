@@ -124,7 +124,7 @@ public class MolestoManager : MonoBehaviour
 
     void MoveMolesto()
     {
-        speed = Mathf.Min(Mathf.Max(GameManager.instance.roundCounter, 1) * difficulty / 3.0f, 10);
+        speed = Mathf.Min(Mathf.Max(GameManager.instance.roundCounter, 1) * difficulty / 2.5f, 10);
         if(chosen == 0)
         {
             markerpos = flyMarkers[currentMarker].GetComponent<Transform>().position;
@@ -154,7 +154,7 @@ public class MolestoManager : MonoBehaviour
 
     void ReduceMolesto()
     {
-        damage = Mathf.Min(Mathf.Max(GameManager.instance.roundCounter, 1) * difficulty / 5.0f, 10);
+        damage = Mathf.Min(Mathf.Max(GameManager.instance.roundCounter, 1) * difficulty / 10.0f, 10);
         switch (peopleList[chosen].field)
         {
             case "Risa":
