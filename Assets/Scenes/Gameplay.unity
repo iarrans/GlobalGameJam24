@@ -1893,7 +1893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c752fb4f28566948997df7f727876f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91879495aa5faa64b9e4beba47a0f455, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2180,7 +2180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93f73533af8c2c945b731f019b90028a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f61f27a49bd01ab45a588b9515db1107, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3143,7 +3143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f3825ba2b734024e8d425514cffca61, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e3305a35514f3e4b8454e46f6ae15c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4168,10 +4168,10 @@ MonoBehaviour:
   QuestionText: {fileID: 2143208539}
   option1Text: {fileID: 8278028}
   option2Text: {fileID: 728168009}
-  upperVariation: {fileID: 21300000, guid: a93111b126f71ae4fbcfef7f313bf49b, type: 3}
-  lowerVariation: {fileID: 21300000, guid: 28a548f0614cfb040a8257c3a7aae8e6, type: 3}
-  noneVariation: {fileID: 21300000, guid: 9832dde99db3fa441b13f7688d2f6777, type: 3}
-  randomRangeVariation: {fileID: 21300000, guid: e0dd4d1bd5b30914a98dfafb725a4c88,
+  upperVariation: {fileID: 21300000, guid: 9588cb1eba9427c4cb31dddcb0904905, type: 3}
+  lowerVariation: {fileID: 21300000, guid: 78ca1631d376b6b47811c06e1bba04aa, type: 3}
+  noneVariation: {fileID: 21300000, guid: 3818704ef2d0fd549889a1950667c253, type: 3}
+  randomRangeVariation: {fileID: 21300000, guid: 580588e24d9dc984c888b18141f63bd5,
     type: 3}
   risaSlider: {fileID: 1272316908}
   audienciaSlider: {fileID: 1433088880}
