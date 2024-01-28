@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
 
     public Light mainLight;
 
+    public GameObject baston;
+    public Transform bastonFinPosition;
+    public Transform bastonSpawn;
+
 
     private void Awake()
     {
@@ -168,8 +172,35 @@ public class GameManager : MonoBehaviour
 
      private IEnumerator EndGame()
      {
-        Debug.Log("¡Se acabó la partida! ");
         UIManager.instance.questionsCanvas.SetActive(false);
+
+        float speed = CompanionSpeed;
+
+        GameObject character = GameObject.Instantiate(baston, bastonSpawn);
+        character.transform.position = bastonSpawn.position;
+
+        Vector3 end = bastonFinPosition.position;
+        // speed should be 1 unit per second
+        while (character.transform.position != end)
+        {
+            character.transform.position = Vector3.MoveTowards(character.transform.position, end, speed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+        mainLight.intensity = 0;
+        //Aquí audio de micky pa casa
+
+        end = invitadoSpawnPosition.position;
+        // speed should be 1 unit per second
+        while (mickey.transform.position != end)
+        {
+            character.transform.position = Vector3.MoveTowards(character.transform.position, bastonSpawn.position, speed * Time.deltaTime);
+            mickey.transform.position = Vector3.MoveTowards(mickey.transform.position, end, speed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+        mickey.SetActive(false);
+        character.SetActive(false);
         yield return null;
      }
 

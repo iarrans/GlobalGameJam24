@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba48b43fadd6b60418dba47cb4825316
+guid: 310234b685c95494a97d6cf380710871
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -37,36 +37,7 @@ ModelImporter:
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 1
-      lastFrame: 35
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
-    - serializedVersion: 16
-      name: IddleNeutral
-      takeName: Scene
-      internalID: -8800838248204228948
-      firstFrame: 44
-      lastFrame: 69.2
+      lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -93,9 +64,38 @@ ModelImporter:
     - serializedVersion: 16
       name: IddleTalk
       takeName: Scene
+      internalID: -8800838248204228948
+      firstFrame: 44
+      lastFrame: 71
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: IddleNeutral
+      takeName: Scene
       internalID: -491678979986718739
-      firstFrame: 81
-      lastFrame: 106
+      firstFrame: 86
+      lastFrame: 102
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -123,8 +123,8 @@ ModelImporter:
       name: Jump
       takeName: Scene
       internalID: -7861037764357068360
-      firstFrame: 113
-      lastFrame: 130
+      firstFrame: 110
+      lastFrame: 131
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
