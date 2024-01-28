@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2adaa36fcce71b44b771d2edc204c61, type: 3}
+  m_Name: Q016
+  m_EditorClassIdentifier: 
+  enunciado: "Quieres hacer saber al p\xFAblico que est\xE1s al d\xEDa de las noticias
+    de manera original"
+  Option1: {fileID: 11400000, guid: 4fa093edc47d5b648bae0f24bfa43f91, type: 2}
+  Option2: {fileID: 11400000, guid: 4120f4ac25d913f4799b43071f4b6838, type: 2}
+  invitado: 0

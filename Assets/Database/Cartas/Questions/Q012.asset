@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2adaa36fcce71b44b771d2edc204c61, type: 3}
+  m_Name: Q012
+  m_EditorClassIdentifier: 
+  enunciado: Ves al invitado algo incomodo mirando a la salida
+  Option1: {fileID: 11400000, guid: a3b229cfe1fd98b43a9aa0cf060fc721, type: 2}
+  Option2: {fileID: 11400000, guid: fff76dcdfa683ad48a4f7bf81b616e92, type: 2}
+  invitado: 1
